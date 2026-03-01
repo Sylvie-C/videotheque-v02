@@ -4,11 +4,6 @@ import fs from "fs"
 import path from "path"
 
 
-/* 
-const VIDEOS_DIR = path.join(process.cwd(), "public", "videos")
-const BASE_URL = "/videos"
-const SERIES_DIR = path.join(VIDEOS_DIR, "series")
-*/
 const VIDEOS_DIR = process.env.VIDEOS_DIR!
 const BASE_URL = process.env.BASE_URL !
 const SERIES_DIR = process.env.SERIES_DIR !
@@ -53,8 +48,6 @@ const scanDirectory = (dir: string, baseUrl = BASE_URL) => {
       }
     }
   }
-
-  console.log ("results scanDirectory : " , results)
 
   return results
 }
