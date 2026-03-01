@@ -5,7 +5,7 @@ import path from 'path'
 export const runtime = 'nodejs'   // forcer le runtime Node
 
 
-const BASE_DIR = process.env.SERVER_URL!
+const BASE_DIR = path.join(process.cwd(), process.env.SERVER_URL!)
 
 const VIDEO_EXTENSIONS = [
   ".3gp", ".ari", ".asf", ".avi", ".dng", ".flv", ".m2ts", ".mkv", ".mov",
