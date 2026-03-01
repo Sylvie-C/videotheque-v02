@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #c8ffff; /* light aqua */
+  --foreground: #0f1921; /* bleu pétrole foncé */
+
+  --aquaColor: aqua; 
+  --btnShadow: 0 0 10px var(--foreground);
+  --unsetShadow: 0 0 0 transparent; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1921;
+    --foreground: #c8ffff;
+  }
+}
+
+/* main styles */
+@layer base { 
+
+  body {
+    @apply bg-(--background) text-(--foreground);
+  }
+
+  button {
+    @apply border-2 rounded-lg p-1 leading-none text-base cursor-pointer transition-all duration-300 ease-in-out; 
+    @apply bg-(--background) text-(--foreground) border-(--foreground); 
+  }
+
+  button:hover { 
+    @apply shadow-(--btnShadow) border-(--background) bg-(--foreground) text-(--background);
+  }
+
+  h1,h2 { @apply font-semibold}
+  h2 { @apply underline }
+}
+
+/* specific styles */
+@layer components {
+  .underline-animation {
+    @apply relative inline-block;
+  }
+  .underline-animation:hover {
+    @apply cursor-pointer; 
+  }
+  .underline-animation::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-0.5 bg-(--foreground) w-0 transition-all duration-300;
+  }
+  .underline-animation:hover::after {
+    @apply w-full;
+  }
+
+  .btn-linkstyle { 
+    @apply bg-transparent hover:bg-(--foreground) hover:text-(--background) border-0 p-0 decoration-2; 
+  }
+}
+
