@@ -48,7 +48,7 @@ export default function PrintForm ( { isVisible , onFormSubmit }: PrintFormProps
 
           <label>
             <input type="checkbox" name="series" className="mr-4" />
-            Imprimer Liste condensée (titres séries uniquement) ou Liste détaillée (tous les fichiers individuellement) ?
+            Imprimer Liste condensée (titres séries uniquement, sinon liste détaillée, c'est-à-dire tous les fichiers individuellement)
           </label>
 
           <div className="flex justify-center mt-6" >
